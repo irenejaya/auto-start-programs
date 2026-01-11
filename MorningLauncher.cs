@@ -145,7 +145,7 @@ namespace MorningLauncher
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading configuration:\r\n{ex.Message}", "Error",
+                MessageBox.Show("Error loading configuration:\r\n" + ex.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -158,7 +158,7 @@ namespace MorningLauncher
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving configuration:\r\n{ex.Message}", "Error",
+                MessageBox.Show("Error saving configuration:\r\n" + ex.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -179,7 +179,7 @@ namespace MorningLauncher
             }
             else
             {
-                runButton.Text = $"RUN ALL ({applicationPaths.Count}) APPLICATIONS";
+                runButton.Text = "RUN ALL (" + applicationPaths.Count + ") APPLICATIONS";
                 runButton.Enabled = true;
             }
         }
@@ -295,16 +295,16 @@ namespace MorningLauncher
                 catch (Exception ex)
                 {
                     failCount++;
-                    failedApps.Add($"{appPath}\r\n  Error: {ex.Message}");
+                    failedApps.Add(appPath + "\r\n  Error: " + ex.Message);
                 }
             }
 
             // Show summary if there were failures
             if (failCount > 0)
             {
-                string message = $"Launched {successCount} application(s) successfully.\r\n" +
-                                $"{failCount} application(s) failed to launch:\r\n\r\n" +
-                                string.Join("\r\n\r\n", failedApps) +
+                string message = "Launched " + successCount + " application(s) successfully.\r\n" +
+                                failCount + " application(s) failed to launch:\r\n\r\n" +
+                                string.Join("\r\n\r\n", failedApps.ToArray()) +
                                 "\r\n\r\nThe launcher will now close.";
                 MessageBox.Show(message, "Launch Complete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
