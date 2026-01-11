@@ -1,4 +1,4 @@
-# Morning Launcher - Quick Start Guide
+# Quick Start Guide
 
 A simple Windows Forms application to launch multiple programs with one click.
 
