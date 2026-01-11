@@ -83,4 +83,4 @@ C:\Users\YourName\Desktop\MyApp.exe
 
 ---
 
-**Enjoy your streamlined morning routine!** ☕
+**Enjoy your morning routine!** ☕
